@@ -1,0 +1,273 @@
+@import url("font-face.css");
+
+:root {
+    --content-color: #ffffff;
+    --background-color: #343434;
+    --selection-color: #212225;
+    --extra-color: #484848;
+
+    --title-font: 'Planc', sans-serif;
+    --body-font: 'Planc', sans-serif;
+}
+
+html {
+    font-family: var(--body-font);
+    font-size: 17px;
+}
+
+a,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+header {
+    background-color: white;
+    border-bottom: 1px solid black;
+    white-space: nowrap;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+header h1 {
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 35px;
+    display: inline-block;
+    margin: 10px 8px -5px;
+}
+
+aside {
+    background-color: white;
+    border-top: 1px solid black;
+    white-space: nowrap;
+    position: fixed;
+    width: calc(100vh - 60px);
+    height: 30px;
+    top: 0px;
+    right: 0;
+    z-index: 998;
+    transform-origin: bottom right;
+    transform: translateY(-100%) rotate(-90deg);
+}
+
+aside h2 {
+    font-family: var(--text-font);
+    text-transform: lowercase;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+main {
+    margin-left: 15px;
+    margin-right: 29px;
+    margin-top: 48px;
+    padding-top: 40px;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+section h1 {
+    font-family: var(--body-font);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+section ol {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+section ul {
+    padding: 0;
+    margin: 0;
+}
+
+section ul li {
+    padding-left: -10px;
+    padding-right: 10px;
+    list-style-position: inside;
+}
+
+section ul li span {
+    position: relative;
+    left: -10px;
+}
+
+figure {
+    width: 100%;
+    padding-top: 70%;
+    margin: 0;
+    background-color: lightgray;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+figure img {
+    transition: all .3s;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+figure:hover img,
+figure:focus img {
+    transform: scale(1.03);
+    /*    mix-blend-mode: exclusion;*/
+}
+
+figcaption {
+    font-family: var(--body-font);
+    font-size: 16px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+figcaption span {
+    font-weight: 800;
+    padding-right: 16px;
+}
+
+.btn-close {
+    z-index: 9999;
+}
+
+.btn-close:focus {
+    box-shadow: unset;
+}
+
+.modal-dialog {
+    margin: 0;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: none;
+    height: 100%;
+    background-color: white;
+}
+
+.modal-header {
+    border: none;
+    padding-bottom: 0;
+}
+
+.modal-body {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.carousel-item {
+    height: calc(100vh - 34px);
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+#btn-back-to-top {
+    font-family: monospace;
+    background-color: white;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0 15px;
+    margin: 0;
+    display: inline-block;
+    font-size: 17px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform-origin: top right;
+    transform: translateY(100%) rotate(90deg);
+    width: 60px;
+    height: 30px;
+}
+
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 45px;
+        margin: 15px 10px -5px;
+    }
+
+    aside {
+        height: 40px;
+    }
+
+    aside h2 {
+        font-size: 22px;
+    }
+
+    main {
+        margin-left: 20px;
+        margin-right: 39px;
+        margin-top: 65px;
+    }
+
+    section ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .carousel-item img {
+        height: 100%;
+        width: auto;
+    }
+
+    #btn-back-to-top {
+        font-size: 22px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        margin: 0;
+        color: white;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        top: unset;
+    }
+}

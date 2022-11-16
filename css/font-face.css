@@ -1,0 +1,29 @@
+/*Alegreya Font Family*/
+
+@font-face {
+font-family: 'Planc';
+src: url('../src/font/Planc-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Planc';
+src: url('../src/font/Planc-RegularItalic.ttf') format('truetype');
+font-weight: normal;
+font-style: italic;
+}
+
+@font-face {
+font-family: 'Planc';
+src: url('../src/font/Planc-Bold.ttf') format('truetype');
+font-weight: bold;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Planc';
+src: url('../src/font/Planc-BoldItalic.ttf') format('truetype');
+font-weight: bold;
+font-style: italic;
+}
