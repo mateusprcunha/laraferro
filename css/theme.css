@@ -5,6 +5,8 @@
     --background-color: #343434;
     --selection-color: #212225;
     --extra-color: #484848;
+    --menu-main-color: #B0B0B0;
+    --menu-alt-color: #8F8F8F;
 
     --title-font: 'Planc', sans-serif;
     --body-font: 'Planc', sans-serif;
@@ -18,8 +20,17 @@ html {
 a,
 a:hover,
 a:active {
+    font-family: var(--body-font);
     color: inherit;
     text-decoration: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--title-font);
+}
+
+p, li {
+    font-family: var(--body-font);
 }
 
 header {
@@ -34,7 +45,6 @@ header {
 }
 
 header h1 {
-    font-family: var(--title-font);
     text-transform: uppercase;
     font-weight: 800;
     font-size: 35px;
@@ -57,12 +67,11 @@ aside {
 }
 
 aside h2 {
-    font-family: var(--text-font);
     text-transform: lowercase;
     font-weight: 600;
     font-size: 14px;
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px;
 }
 
 main {
@@ -77,9 +86,9 @@ section {
 }
 
 section h1 {
-    font-family: var(--body-font);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
+    text-transform: lowercase;
     margin: 0;
 }
 
@@ -96,14 +105,8 @@ section ul {
 }
 
 section ul li {
-    padding-left: -10px;
-    padding-right: 10px;
-    list-style-position: inside;
-}
-
-section ul li span {
-    position: relative;
-    left: -10px;
+    list-style: none;
+    padding-right: 20px;
 }
 
 figure {
@@ -183,14 +186,143 @@ figcaption span {
     width: 100%;
 }
 
+.offcanvas {
+    background-color: var(--menu-main-color);
+    border: none;
+}
+
+.offcanvas.offcanvas-end {
+    border: none;
+}
+
+.offcanvas h3,
+.offcanvas li,
+.offcanvas dt,
+.offcanvas dd {
+    display: block;
+    white-space: nowrap;
+}
+
+.offcanvas h3 {
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.offcanvas dt {
+    font-weight: normal;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.offcanvas dd {
+    font-weight: bold;
+    margin: 0;
+}
+
+.offcanvas ul {
+    padding: 0;
+    margin-top: 5px;
+}
+
+.offcanvas-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+.offcanvas-container {
+    padding: 25px 20px;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 0.2s;
+}
+
 .carousel-item {
     height: calc(100vh - 34px);
     text-align: center;
+    background-color: white;
+    transition: transform 0.2s ease-in-out;
 }
 
 .carousel-item img {
     width: 100%;
     height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    color: black;
+    width: 1%;
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: black;
+}
+
+.bio {
+    position: relative;
+    max-width: 450px;
+    float:left;
+    overflow: auto;
+    height: 100%;
+}
+
+.bio strong {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.menu-selector {
+    position: relative;
+    background-color: var(--menu-alt-color);
+    padding-top: 140px;
+    min-width: 300px;
+    float:left;
+    overflow: auto;
+    height: 100%;
+}
+
+.menu-selector ul {
+    text-transform: lowercase;
+}
+
+.thumbnail {
+    height: 100px;
+    width: 150px;
+    border: 1px solid black;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+li:hover .hidden {
+    display: block;
+}
+
+.btn-close {
+    opacity: 1;
 }
 
 #btn-back-to-top {
@@ -238,6 +370,17 @@ figcaption span {
         justify-content: space-between;
     }
 
+    .offcanvas, .offcanvas.offcanvas-end {
+        width: auto;
+        min-width: 500px;
+    }
+    
+    .offcanvas .dynamic-column {
+        float: left;
+        display: inline-block;
+        padding-right: 40px;
+    }
+
     .carousel-item img {
         height: 100%;
         width: auto;
@@ -250,6 +393,11 @@ figcaption span {
 }
 
 @media (max-width: 767px) {
+
+    figcaption span {
+        display: block;
+        margin-bottom: -5px;
+    }
 
     .modal-body {
         padding: 0;
@@ -269,5 +417,10 @@ figcaption span {
     .carousel-control-prev,
     .carousel-control-next {
         top: unset;
+        width: 15%;
+    }
+    
+    .menu-selector {
+        display: none;
     }
 }

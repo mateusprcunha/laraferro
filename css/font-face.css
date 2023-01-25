@@ -16,14 +16,14 @@ font-style: italic;
 
 @font-face {
 font-family: 'Planc';
-src: url('../src/font/Planc-Bold.ttf') format('truetype');
+src: url('../src/font/Planc-ExtraBold.ttf') format('truetype');
 font-weight: bold;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'Planc';
-src: url('../src/font/Planc-BoldItalic.ttf') format('truetype');
+src: url('../src/font/Planc-ExtraBoldItalic.ttf') format('truetype');
 font-weight: bold;
 font-style: italic;
 }
