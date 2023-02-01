@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5 {
     font-family: var(--title-font);
 }
 
-p, li {
+p, li, dt, dd {
     font-family: var(--body-font);
 }
 
@@ -241,6 +241,10 @@ figcaption span {
     padding: 25px 20px;
 }
 
+.offcanvas-backdrop.show {
+    opacity: 0;
+}
+
 .carousel-fade .active.carousel-item-start,
 .carousel-fade .active.carousel-item-end {
   transition: opacity 0s 0.2s;
@@ -418,6 +422,14 @@ li:hover .hidden {
     .carousel-control-next {
         top: unset;
         width: 15%;
+    }
+    
+    .offcanvas h3 {
+        padding-top: 17px;
+    }
+    
+    .offcanvas .dynamic-column:first-child h3 {
+        padding-top: 0;
     }
     
     .menu-selector {
